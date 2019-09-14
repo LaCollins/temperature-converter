@@ -1,4 +1,10 @@
+const tempForm = document.getElementById('tempToConvert');
+const button = document.getElementById('convert');
+const fRadio = document.getElementById('fahrenheit');
+const cRadio = document.getElementById('celsius');
+
 const toCelsius =  () => {
+
 
 }
 
@@ -6,14 +12,29 @@ const toFahrenheit =  () => {
 
 }
 
-// Get a reference to the button element in the DOM
-const button = document.getElementById("converter");
-
-// This function should determine which conversion should
-// happen based on which radio button is selected.
 const determineConverter = (e) => {
-  console.log("event", e);
+    if (fRadio.checked === true){
+        console.log('F');
+    } else if (cRadio.checked === true) {
+        console.log('C');
+    } else {
+        console.log('please select');
+    }
+
 }
 
-// Assign a function to be executed when the button is clicked
-button.addEventListener("click", determineConverter);
+
+const buttonClick = () => {
+    console.log(tempForm.value);
+}
+
+
+tempForm.addEventListener('keypress', (e) => {
+    if (e.keyCode === 13) {
+        e.preventDefault();
+        button.click();
+
+    }
+});
+button.addEventListener('click', determineConverter);
+
