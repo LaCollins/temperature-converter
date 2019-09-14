@@ -16,10 +16,10 @@ const tempCard = (convertedTemp, icon) => {
             <div class="card-body col-4 text-center">
             <i class="fas fa-thermometer-half"></i>
             </div>
-            ${icon}
         <div class="col-6">
             <div class="card-body text-center">
-                   <p id="tempOutput">${convertedTemp}°</p>
+                ${icon}
+                <p id="tempOutput">${convertedTemp}°</p>
             </div>
         </div>
         </div>
