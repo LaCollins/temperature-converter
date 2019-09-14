@@ -26,14 +26,38 @@ const tempCard = (convertedTemp) => {
     printToDom(domString, 'tempZone');
 }
 
+const changeColor = (actualTemp, lowTemp, highTemp) => {
+    const divToColor = document.getElementById('tempZone');
+    // let icon;
+    if (actualTemp < lowTemp) {
+        divToColor.style.color = "blue";
+        // icon = '<i class="far fa-snowflake"></i>';
+        // return icon;
+    } else if (actualTemp > highTemp) {
+        divToColor.style.color = "red";
+        // icon = '<i class="fas fa-sun"></i>';
+        // return icon;
+    } else {
+        divToColor.style.color = "green";
+        // icon = '<i class="far fa-laugh-beam"></i>';
+        // return icon;
+    }
+}
+
 const toCelsius =  (temp) => {
-    let newTemp = Math.round((temp - 32) / 1.8);
+    const high = 32;
+    const low = 0;
+    let newTemp = Math.round((temp - 32) / 1.8);;
     tempCard(newTemp);
+    changeColor(newTemp, low, high);
 }
 
 const toFahrenheit =  (temp) => {
+    const high = 90;
+    const low = 32;
     let newTemp = Math.round((temp * 1.8) + 32);
     tempCard(newTemp);
+    changeColor(newTemp, low, high);
 }
 
 const determineConverter = (e) => {
@@ -61,5 +85,6 @@ tempForm.addEventListener('keypress', (e) => {
 
     }
 });
+
 button.addEventListener('click', determineConverter);
 clear.addEventListener('click', buttonClear);
