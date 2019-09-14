@@ -5,3 +5,15 @@ body {
 #tempForms {
     padding: 4em;
 }
+
+#tempOutput, .fas {
+    font-size: 5em;
+}
+
+.fas {
+    margin-top: .25em;
+}
+
+#tempZone {
+    padding: 2em;
+}
