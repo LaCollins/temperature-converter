@@ -2,6 +2,7 @@ const tempForm = document.getElementById('tempToConvert');
 const button = document.getElementById('convert');
 const fRadio = document.getElementById('fahrenheit');
 const cRadio = document.getElementById('celsius');
+const clear = document.getElementById('clear');
 
 const printToDom = (toPrint, divId) => {
     document.getElementById(divId).innerHTML = toPrint;
@@ -9,7 +10,7 @@ const printToDom = (toPrint, divId) => {
 
 const tempCard = (convertedTemp) => {
     let domString = `
-    <div class="card col-8">
+    <div class="card col-9">
         <div class="row">
             <div class="card-body col-4 text-center">
             <i class="fas fa-thermometer-half"></i>
@@ -47,8 +48,9 @@ const determineConverter = (e) => {
 }
 
 
-const buttonClick = () => {
-    console.log(tempForm.value);
+const buttonClear = () => {
+    tempForm.value = '';
+    printToDom('', 'tempZone');
 }
 
 
@@ -60,4 +62,4 @@ tempForm.addEventListener('keypress', (e) => {
     }
 });
 button.addEventListener('click', determineConverter);
-
+clear.addEventListener('click', buttonClear);
