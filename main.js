@@ -9,7 +9,7 @@ const printToDom = (toPrint, divId) => {
     document.getElementById(divId).innerHTML = toPrint;
 }
 
-const tempCard = (convertedTemp, icon) => {
+const tempCard = (convertedTemp, icon, ForC) => {
     let domString = `
     <div class="card col-9">
         <div class="row">
@@ -19,7 +19,7 @@ const tempCard = (convertedTemp, icon) => {
         <div class="col-6">
             <div class="card-body text-center">
                 ${icon}
-                <p id="tempOutput">${convertedTemp}°</p>
+                <p id="tempOutput">${convertedTemp}°${ForC}</p>
             </div>
         </div>
         </div>
@@ -47,7 +47,7 @@ const toCelsius =  (temp) => {
     const low = 0;
     let newTemp = Math.round((temp - 32) / 1.8);;
     changeColor(newTemp, low, high);
-    tempCard(newTemp, icon);
+    tempCard(newTemp, icon, "C");
 }
 
 const toFahrenheit =  (temp) => {
@@ -55,7 +55,7 @@ const toFahrenheit =  (temp) => {
     const low = 32;
     let newTemp = Math.round((temp * 1.8) + 32);
     changeColor(newTemp, low, high);
-    tempCard(newTemp, icon);
+    tempCard(newTemp, icon, "F");
 }
 
 const determineConverter = (e) => {
