@@ -4,6 +4,10 @@
 This app allows the user to enter a temperature and convert it to either Fahrenheit or Celsius. 
 
 ## Screenshots
+![Mainview of temp-converter](https://raw.githubusercontent.com/LaCollins/temperature-converter/master/screenshots/mainview.PNG)
+![Conversion view 1](https://raw.githubusercontent.com/LaCollins/temperature-converter/master/screenshots/conversion1.PNG)
+![Conversion view 2](https://raw.githubusercontent.com/LaCollins/temperature-converter/master/screenshots/conversion2.PNG)
+![Conversion view 3](https://raw.githubusercontent.com/LaCollins/temperature-converter/master/screenshots/conversion3.PNG)
 
 
 ## How to run
